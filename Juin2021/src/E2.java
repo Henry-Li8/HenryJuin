@@ -20,7 +20,15 @@ public class E2 {
 			reader = new BufferedReader(new FileReader("monFichier.txt"));
 			String line = reader.readLine();
 			while (line != null) {
-				o += line.length() + "/n";
+				int b = 0;
+				char [] lineA = line.toCharArray();
+				for (char a : lineA) {
+					if (a != ' ') {
+						b++;
+					}
+				}
+				
+				o += b + "/n";
 			}
 			output.append(o);
 			System.out.print(o);
